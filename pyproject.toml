@@ -1,0 +1,26 @@
+[project]
+name = "flight_call_support"
+version = "0.1.0"
+description = "flight_call_support using crewAI"
+authors = [{ name = "Aniket Masaye", email = "aniketms42@gmail.com" }]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "crewai[tools]>=0.119.0,<1.0.0"
+]
+
+[project.scripts]
+flight_call_support = "flight_call_support.main:run"
+run_crew = "flight_call_support.main:run"
+train = "flight_call_support.main:train"
+replay = "flight_call_support.main:replay"
+test = "flight_call_support.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/flight_call_support"]
