@@ -7,13 +7,8 @@ def run():
     """
     Run the crew.
     """
-    inputs = {
-        'origin': "Ahmedabad",
-        'destination': "Hyderabad",
-        'date': "2023-09-10"
-    }
     
     try:
-        FlightCallAgent().crew().kickoff(inputs=inputs)
+        FlightCallAgent().crew().kickoff(inputs={"user_query": "Find me a flight from Ahmedabad to Hyderabad on 2023-09-10"})
     except Exception as e:
         raise Exception(f"An error occurred while running the crew: {e}")
